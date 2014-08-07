@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>BrkPnt.com | Showing Your Breakpoint</title>
+	<title>BrkPnt.com | Show Your Breakpoint</title>
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/superhero/bootstrap.min.css" rel="stylesheet">
 	<link href="styles.css" rel="stylesheet">
 </head>
@@ -12,7 +12,7 @@
 		<div class="header">
 			<h1>
 				BrkPnt<span>.com</span>
-				<em>Showing Your Breakpoint</em>
+				<em>Show Your Breakpoint</em>
 			</h1>
 		</div>
 
