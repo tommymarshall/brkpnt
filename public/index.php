@@ -64,8 +64,9 @@ if (strpos($route,':') !== false) {
 		'
 	);
 
-	if ($theme[1] && key_exists($theme[1], $themes)) {
-		$theme = $themes[$theme[1]];
+	$theme_name = $theme[1];
+	if ($theme_name && key_exists($theme_name, $themes)) {
+		$theme = $themes[$theme_name];
 	} else {
 		$theme = $themes['default'];
 	}
