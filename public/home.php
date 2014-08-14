@@ -26,7 +26,7 @@
 		</div>
 		<h3>How does it work?</h3>
 		<hr>
-		<p>The above link tag styles the <em>:after</em> pseudo-element of the body with breakpoints you define in the URL. It then changes the <em>content</em> of that pseudo-element with the name of the specified breakpoint. Done.</p>
+		<p>The above link tag styles the <strong>:after</strong> pseudo-element of the body with breakpoints you define in the URL. It then changes the <strong>content</strong> of that pseudo-element with the name of the specified breakpoint. Done.</p>
 		<p style="text-align: center">
 			<a class="btn btn-success" role="button" href="http://viget.com/extend/check-your-breakpoint-using-this-simple-css-snippet" target="_blank">Read more on how it works</a>
 		</p>
@@ -44,7 +44,7 @@
 			<li>w - min-width (default)</li>
 		</ul>
 		<code>
-			&lt;link href="//brkpnt.com/short:10emh,tablet:500-800W" rel="stylesheet"&gt;
+			&lt;link href="//brkpnt.com/short:10emH,tablet:500W" rel="stylesheet"&gt;
 		</code>
 		<p>Add extra query selectors using a dash.</p>
 		<code>
