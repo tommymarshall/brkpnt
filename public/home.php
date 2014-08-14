@@ -18,7 +18,7 @@
 
 		<div class="jumbotron">
 			<p class="lead">
-				Whether you're working on buildout or doing QA, it's tough to know the breakpoint you're viewing a page at. Add this customizable snippet to your page and stop wondering.
+				Whether you're working on buildout or doing QA, it's tough to know the breakpoint you're viewing a page at.<br>Add this customizable snippet and stop wondering.
 			</p>
 			<code>
 				&lt;link href="//brkpnt.com/mobile:0,tablet:501,desktop:1024" rel="stylesheet"&gt;
