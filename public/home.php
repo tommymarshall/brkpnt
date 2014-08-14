@@ -40,11 +40,25 @@
 		<code>
 			&lt;link href="//brkpnt.com/mobile:0h,tablet:501h,cinema:980h" rel="stylesheet"&gt;
 		</code>
+		<p>Use <strong>EM's</strong> if you want (PX default)</p>
+		<code>
+			&lt;link href="//brkpnt.com/small:10em,large:50em" rel="stylesheet"&gt;
+		</code>
+		<p>Use <strong>max</strong> or <strong>min</strong> heights and widths</p>
+		<ul>
+			<li>H - max-height</li>
+			<li>h - min-height</li>
+			<li>W - max-width</li>
+			<li>w - min-width (default)</li>
+		</ul>
+		<code>
+			&lt;link href="//brkpnt.com/short:10emh,tablet:500-800W" rel="stylesheet"&gt;
+		</code>
 		<p>Change the color theme.</p>
 		<code>
 			<span>// Blue theme</span><br>
 			&lt;link href="//brkpnt.com/mobile:0,notebook:800|blue" rel="stylesheet"&gt;
-			<br><br><span>// Red theme</span><br>
+			<br><br><span>// Red (default) theme</span><br>
 			&lt;link href="//brkpnt.com/mobile:0,notebook:800|red" rel="stylesheet"&gt;
 		</code>
 		<h3>Credits</h3>

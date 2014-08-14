@@ -1,48 +1,17 @@
 <?php
 
-// Get Route
-$route = substr($_SERVER['REQUEST_URI'], 1);
+class MediaQueryBuilder {
 
-if (strpos($route,':') !== false) {
-	// Assign Breakpoint
-	$theme = explode('|', $route);
-	$breakpoints = explode(',', $theme[0]);
+	protected $_request;
 
-	// Assign Breakpoint values
-	foreach ($breakpoints as $data) {
-		$breakpoint_values = explode(':', $data);
-		$breakpoint_name = $breakpoint_values[0];
-		$breakpoint_data = explode('-', $breakpoint_values[1]);
+	protected $_parameters;
 
-		// Assign Min and Max breakpoint
-		$min = $breakpoint_data[0];
-		$max = $breakpoint_data[1];
+	protected $_breakpoints = [];
 
-		// height or width?
-		if (strtolower(substr($min, -1)) == "h") {
-			$first_type = 'height';
-			$min = substr($min, 0, -1);
-		} else {
-			$first_type = 'width';
-		}
-
-		$max_string = "";
-		if ( $max ) {
-			$second_type = strtolower(substr($max, -1)) == "h" ? 'height' : 'width';
-			$max = substr($max, 0, -1);
-			$max_string =  " and (max-{$second_type}: {$max}px)";
-		}
-
-		$output .= "\n@media (min-{$first_type}: {$min}px){$max_string}{\n";
-		$output .= "	body:after{\n";
-		$output .= "		content: \"$breakpoint_name\";\n";
-		$output .= "	}\n";
-		$output .= "}\n";
-	}
-
-	// Return CSS
-	$themes = array(
+	// Weird indentation to account for output
+	protected $_themes = [
 		'default' => '
+	/* Red theme */
 	background: #a12347;
 	color: #fff;
 	font-family: "Helvetica Nueu", Helvetica, Arial;
@@ -53,6 +22,7 @@ if (strpos($route,':') !== false) {
 	border-bottom-left-radius: 3px;
 		',
 		'blue' => '
+	/* Blue theme */
 	background: #2347a1;
 	color: #fff;
 	font-family: "Helvetica Nueu", Helvetica, Arial;
@@ -62,28 +32,134 @@ if (strpos($route,':') !== false) {
 	padding: 5px 10px;
 	border-bottom-left-radius: 3px;
 		'
-	);
+	];
 
-	$theme_name = $theme[1];
-	if ($theme_name && key_exists($theme_name, $themes)) {
-		$theme = $themes[$theme_name];
-	} else {
-		$theme = $themes['default'];
+	public function __construct($request)
+	{
+
+		$this->_request    = $this->cleanRequest($request);
+		$this->_parameters = $this->getBreakpointParameters($request);
+		$this->_themeName  = $this->getThemeName($request);
+		$this->build();
 	}
 
-	header("Content-Type: text/css", true);
-	echo "
-body:after {
+	public function cleanRequest($request)
+	{
+		return trim(substr($request, strrpos($request, '/')));
+	}
+
+	public function build()
+	{
+		// Assign Breakpoint values
+
+		foreach ($this->_parameters as $data) {
+			$output = "@media ";
+
+			$breakpoint_definition = explode(':', $data);
+			$breakpoint_name       = $breakpoint_definition[0];
+			$breakpoint_parameters = explode('-', $breakpoint_definition[1]);
+
+			foreach( $breakpoint_parameters as $parameter ) {
+				switch (substr($parameter, -1)) {
+					case 'H':
+						$parameter = substr($parameter, 0, -1);
+						$property = 'max-height';
+					break;
+
+					case 'W':
+						$parameter = substr($parameter, 0, -1);
+						$property = 'max-width';
+					break;
+
+					case 'h':
+						$parameter = substr($parameter, 0, -1);
+						$property = 'min-height';
+					break;
+
+					case 'w':
+						$parameter = substr($parameter, 0, -1);
+						$property = 'min-width';
+					break;
+
+					default:
+						$property = 'min-width';
+					break;
+				}
+
+				$type = strtolower(substr($parameter, -2));
+
+				if ($type == 'px' || $type == 'em') {
+					$value = $parameter;
+				} elseif (is_numeric($parameter)) {
+					$value = $parameter . 'px';
+				} else {
+					$value = $parameter;
+				}
+
+				$output .= "({$property}: {$value}) and ";
+			}
+
+			$output = substr($output, 0, strlen($output) - 5);
+			$output .= "{\n";
+			$output .= "	body:after{\n";
+			$output .= "		content: \"$breakpoint_name\";\n";
+			$output .= "	}\n";
+			$output .= "}\n";
+			$this->_breakpoints[] = $output;
+		}
+	}
+
+	public function getBreakpointParameters()
+	{
+		$parts = explode('|', $this->_request);
+
+		return explode(',', $parts[0]);
+	}
+
+	public function getThemeName($request)
+	{
+		$parts = explode('|', $this->_request);
+
+		return $parts[1];
+	}
+
+	public function getTheme()
+	{
+		$theme_name = $this->_themeName;
+		if ($theme_name && key_exists($theme_name, $this->_themes)) {
+			$theme = $this->_themes[$theme_name];
+		} else {
+			$theme = $this->_themes['default'];
+		}
+
+		return $theme;
+	}
+
+	public function output()
+	{
+		$output = implode('', $this->_breakpoints);
+
+		echo "body:after {
 	box-sizing: border-box;
 	position: fixed;
 	right: 0;
 	text-align: center;
 	top: 0;
 	z-index: 99;
-	$theme
+	{$this->getTheme()}
 }
 $output
-";
+	";
+	}
+}
+
+// Get Route
+$route = substr($_SERVER['REQUEST_URI'], 1);
+
+if (strpos($route,':') !== false) {
+	$css = new MediaQueryBuilder($route);
+	header("Content-Type: text/css", true);
+	echo $css->output();
 } else {
 	include 'home.php';
 }
