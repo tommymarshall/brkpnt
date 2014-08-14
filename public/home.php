@@ -32,19 +32,11 @@
 		</p>
 		<h3>Other examples</h3>
 		<hr>
-		<p>Specify min and max widths using a dash.</p>
-		<code>
-			&lt;link href="//brkpnt.com/mobile:0-500,tablet:501-800" rel="stylesheet"&gt;
-		</code>
-		<p>Specify heights by adding <strong>h</strong>, widths are the default.</p>
-		<code>
-			&lt;link href="//brkpnt.com/mobile:0h,tablet:501h,cinema:980h" rel="stylesheet"&gt;
-		</code>
-		<p>Use <strong>EM's</strong> if you want (PX default)</p>
+		<p>Specify <strong>EM's</strong> if you want (PX default).</p>
 		<code>
 			&lt;link href="//brkpnt.com/small:10em,large:50em" rel="stylesheet"&gt;
 		</code>
-		<p>Use <strong>max</strong> or <strong>min</strong> heights and widths</p>
+		<p>Use <strong>max</strong> or <strong>min</strong> heights and widths when appended to a value. Comebine with <strong>EM's</strong> or <strong>PX's</strong> to really get specific.</p>
 		<ul>
 			<li>H - max-height</li>
 			<li>h - min-height</li>
@@ -53,6 +45,14 @@
 		</ul>
 		<code>
 			&lt;link href="//brkpnt.com/short:10emh,tablet:500-800W" rel="stylesheet"&gt;
+		</code>
+		<p>Add extra query selectors using a dash.</p>
+		<code>
+			&lt;link href="//brkpnt.com/short:0-400H,wide:800-1200W" rel="stylesheet"&gt;
+		</code>
+		<p>Specify <strong>EM's</strong> if you want (PX default).</p>
+		<code>
+			&lt;link href="//brkpnt.com/small:10em,large:50em" rel="stylesheet"&gt;
 		</code>
 		<p>Change the color theme.</p>
 		<code>
