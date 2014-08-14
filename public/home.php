@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>BrkPnt.com | Show Your Breakpoint</title>
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/superhero/bootstrap.min.css" rel="stylesheet">
-	<link href="styles.css" rel="stylesheet">
+	<link href="/styles.css?1" rel="stylesheet">
 </head>
 <body>
 
