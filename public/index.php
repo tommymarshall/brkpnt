@@ -145,7 +145,7 @@ class MediaQueryBuilder {
 	right: 0;
 	text-align: center;
 	top: 0;
-	z-index: 99;
+	z-index: 999999;
 	{$this->getTheme()}
 }
 $output
