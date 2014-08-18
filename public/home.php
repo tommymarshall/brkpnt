@@ -4,9 +4,22 @@
 	<meta charset="UTF-8">
 	<title>BrkPnt.com | Show Your Breakpoint</title>
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/superhero/bootstrap.min.css" rel="stylesheet">
-	<link href="/styles.css?1" rel="stylesheet">
+	<link href="/styles.css" rel="stylesheet">
+
+	<!--
+		HAI! FYI, the stylesheet below is and example
+		of how BrkPnt works. Such easy.
+	-->
+	<link href="//brkpnt.com/mobile:0,tablet:768,desktop:1200" rel="stylesheet">
 </head>
 <body>
+	<div class="check-it-out">
+		<p>
+			<span>Resize window</span>
+			<span>to see change!</span>
+			<i>&#10548;</i>
+		</p>
+	</div>
 
 	<div class="container">
 		<div class="header">
@@ -30,10 +43,12 @@
 		<p style="text-align: center">
 			<a class="btn btn-success" role="button" href="http://viget.com/extend/check-your-breakpoint-using-this-simple-css-snippet" target="_blank">Read more on how it works</a>
 		</p>
+		<p>Look to the top-right of your browsering window, then try resizing it and watch the content swap out for the breakpoint defined.</p>
 		<h3>Other examples</h3>
 		<hr>
 		<p>Specify <strong>EM's</strong> if you want (PX default).</p>
 		<code>
+			<a href="http://codepen.io/tommymarshall/pen/nGqet?editors=100" target="_blank">View Live Demo</a>
 			&lt;link href="//brkpnt.com/small:10em,large:50em" rel="stylesheet"&gt;
 		</code>
 		<p>Use <strong>max</strong> or <strong>min</strong> heights and widths when appended to a value. Comebine with <strong>EM's</strong> or <strong>PX's</strong> to really get specific.</p>
@@ -44,26 +59,22 @@
 			<li>w - min-width (default)</li>
 		</ul>
 		<code>
-			&lt;link href="//brkpnt.com/short:10emH,tablet:500W" rel="stylesheet"&gt;
+			<a href="http://codepen.io/tommymarshall/pen/syhoj?editors=100" target="_blank">View Live Demo</a>
+			&lt;link href="//brkpnt.com/short:10emh,tall:40emh" rel="stylesheet"&gt;
 		</code>
 		<p>Add extra query selectors using a dash.</p>
 		<code>
-			&lt;link href="//brkpnt.com/short:0-400H,wide:800-1200W" rel="stylesheet"&gt;
+			<a href="http://codepen.io/tommymarshall/pen/wzvtg?editors=100" target="_blank">View Live Demo</a>
+			&lt;link href="//brkpnt.com/short:0-600H,wide:800-1200W" rel="stylesheet"&gt;
 		</code>
-		<p>Specify <strong>EM's</strong> if you want (PX default).</p>
+		<p>Change the color theme from default (Red) to Blue with <strong>|blue</strong></p>
 		<code>
-			&lt;link href="//brkpnt.com/small:10em,large:50em" rel="stylesheet"&gt;
-		</code>
-		<p>Change the color theme.</p>
-		<code>
-			<span>// Blue theme</span><br>
+			<a href="http://codepen.io/tommymarshall/pen/FrAzh?editors=100" target="_blank">View Live Demo</a>
 			&lt;link href="//brkpnt.com/mobile:0,notebook:800|blue" rel="stylesheet"&gt;
-			<br><br><span>// Red (default) theme</span><br>
-			&lt;link href="//brkpnt.com/mobile:0,notebook:800|red" rel="stylesheet"&gt;
 		</code>
 		<h3>Credits</h3>
 		<hr>
-		<p>Created by <a href="http://twitter.com/tommyjmarshall">Tommy Marshall</a> as a <a href="http://viget.com/" target="_blank">Viget</a> <a href="http://pointlesscorp.com">Pointless Experiment</a>.</p>
+		<p>Created by <a href="http://twitter.com/tommyjmarshall">Tommy Marshall</a> for <a href="http://viget.com/" target="_blank">Viget</a> as a <a href="http://pointlesscorp.com">Pointless Experiment</a>.</p>
 
 		<div class="footer">
 			BrkPnt.com &copy; 2014

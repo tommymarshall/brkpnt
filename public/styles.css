@@ -40,6 +40,10 @@ body {
 }
 
 .jumbotron code {
+  margin-top: 30px;
+  position: relative;
+  left: -12%;
+  width: 124%;
   margin-bottom: 1em;
 }
 
@@ -106,6 +110,17 @@ code {
   display: block;
   margin-bottom: 2em;
   word-break: break-all;
+  position: relative;
+}
+
+code a {
+  bottom: -20px;
+  color: #5CB85C;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
 }
 
 code span {
@@ -117,17 +132,56 @@ code span {
   text-align: center;
 }
 
-.jumbotron code {
-  margin-top: 30px;
-  position: relative;
-  left: -12%;
-  width: 124%;
-}
-
 p a {
   color: #5CB85C;
 }
 
 .footer {
   padding: 3em 0;
+}
+
+.check-it-out {
+  position: fixed;
+  top: 0;
+  left: 6%;
+  overflow: hidden;
+}
+
+.check-it-out i {
+  display: none;
+}
+
+.check-it-out p {
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding-top: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 500px ) {
+  .check-it-out {
+    left: auto;
+    right: 6px;
+    text-align: right;
+    top: 42px;
+  }
+
+  .check-it-out p {
+    padding: 8px 36px 0 0;
+  }
+
+  .check-it-out span {
+    display: block;
+  }
+
+  .check-it-out i {
+    display: block;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
