@@ -12,8 +12,6 @@
 		example of how BrkPnt works. Such easy.
 	-->
 	<link href="//brkpnt.com/mobile:0,tablet:768,desktop:1200" rel="stylesheet">
-</head>
-<body>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -23,6 +21,8 @@
 		ga('create', 'UA-53965300-1', 'auto');
 		ga('send', 'pageview');
 	</script>
+</head>
+<body>
 	<div class="check-it-out">
 		<p>
 			<span>Resize window</span>
