@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>BrkPnt.com | Show Your Breakpoint</title>
+	<meta name="google-site-verification" content="i_aokg9P8wMNQtJ-cd5_DiuboYTfr92ZBOqSvstFTOQ">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/superhero/bootstrap.min.css" rel="stylesheet">
 	<link href="/styles.css" rel="stylesheet">
 
