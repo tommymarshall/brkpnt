@@ -92,9 +92,6 @@
 
 	</div>
 
-    <script>
-    var element = document.getElementById("megatron");
-    element.parentNode.removeChild(element);
-    </script>
+    <script src="test.js"></script>
 </body>
 </html>
