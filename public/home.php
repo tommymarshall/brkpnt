@@ -39,7 +39,7 @@
 			</h1>
 		</div>
 
-		<div class="jumbotron" id="megatron">
+		<div class="jumbotron">
 			<p class="lead">
 				Whether you're working on buildout or doing QA, it's tough to know the breakpoint you're viewing a page at.<br>Add this customizable snippet and stop wondering.
 			</p>
@@ -92,6 +92,5 @@
 
 	</div>
 
-    <script src="test.js"></script>
 </body>
 </html>
