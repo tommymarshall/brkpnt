@@ -86,7 +86,7 @@
     <p>Created by <a href="http://twitter.com/tommyjmarshall">Tommy Marshall</a> for <a href="http://viget.com/" target="_blank">Viget</a> as a <a href="http://pointlesscorp.com">Pointless Experiment</a>.</p>
 
     <div class="footer">
-      BrkPnt.com &copy; 2015
+      BrkPnt.com &copy; 2015-2016
     </div>
 
   </div>
