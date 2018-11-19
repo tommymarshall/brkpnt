@@ -84,10 +84,10 @@
     </code>
     <h3>Credits</h3>
     <hr>
-    <p>Created by <a href="http://twitter.com/tommyjmarshall">Tommy Marshall</a> for <a href="http://viget.com/" target="_blank">Viget</a> as a <a href="http://pointlesscorp.com">Pointless Experiment</a>.</p>
+    <p>Created by <a href="http://twitter.com/tommyjmarshall">Tommy Marshall</a> for fun.</p>
 
     <div class="footer">
-      BrkPnt.com &copy; 2014-2017
+      BrkPnt.com &copy; 2014-<?php echo date('Y') ?>
     </div>
 
   </div>
