@@ -116,6 +116,10 @@ class MediaQueryBuilder {
 
     public function getThemeName($request)
     {
+        if (!strpos($this->_request, '|')) {
+            return false;
+        }
+
         $parts = explode('|', $this->_request);
 
         return $parts[1] || '';
