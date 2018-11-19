@@ -99,7 +99,7 @@ class MediaQueryBuilder {
 
             $output = substr($output, 0, strlen($output) - 5);
             $output .= "{\n";
-            $output .= "    body:after{\n";
+            $output .= "    body::after{\n";
             $output .= "        content: \"$breakpoint_name\";\n";
             $output .= "    }\n";
             $output .= "}\n";
@@ -118,7 +118,7 @@ class MediaQueryBuilder {
     {
         $parts = explode('|', $this->_request);
 
-        return $parts[1];
+        return $parts[1] || '';
     }
 
     public function getTheme()
